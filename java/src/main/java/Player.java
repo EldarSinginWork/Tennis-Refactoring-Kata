@@ -30,8 +30,4 @@ public class Player {
 
         return "";
     }
-
-    public void updateScore() {
-        score = getPointsAsScore();
-    }
 }

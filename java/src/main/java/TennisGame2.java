@@ -28,30 +28,6 @@ public class TennisGame2 implements TennisGame
             return player1.getPointsAsScore() + "-All";
         }
 
-        if (player1Points > 0 && player2Points==0)
-        {
-            player1.updateScore();
-            P2res = "Love";
-        }
-
-        if (player2Points > 0 && player1Points == 0)
-        {
-            player2.updateScore();
-            P1res = "Love";
-        }
-        
-        if (player1Points > player2Points && player1Points < 4)
-        {
-            player1.updateScore();
-            player2.updateScore();
-        }
-
-        if (player2Points > player1Points && player2Points < 4)
-        {
-            player1.updateScore();
-            player2.updateScore();
-        }
-
         if (player1Points >=4 && player2Points >=0 && (player1Points - player2Points)>=2)
         {
             return "Win for player1";
