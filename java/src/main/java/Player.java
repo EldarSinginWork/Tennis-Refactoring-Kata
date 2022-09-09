@@ -16,16 +16,16 @@ public class Player {
 
     public String getPointsAsScore() {
         if (points == 0) {
-            return  "Love";
+            return "Love";
         }
         if (points == 1) {
-            return  "Fifteen";
+            return "Fifteen";
         }
         if (points == 2) {
-            return  "Thirty";
+            return "Thirty";
         }
         if (points == 3) {
-            return  "Forty";
+            return "Forty";
         }
 
         return "";
