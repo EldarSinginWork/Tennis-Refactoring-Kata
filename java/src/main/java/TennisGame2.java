@@ -19,21 +19,16 @@ public class TennisGame2 implements TennisGame
         int player1Points = player1.getPoints();
         int player2Points = player2.getPoints();
 
-        if (player1.sameScoreAs(player2) && player1Points >= 3) {
-            return "Deuce";
+        if(player1.sameScoreAs(player2)) {
+            return player1Points >= 3 ? "Deuce" : player1.getPointsAsScore() + "-All";
         }
 
-        if (player1.sameScoreAs(player2) && player1Points < 4)
-        {
-            return player1.getPointsAsScore() + "-All";
-        }
-
-        if (player1Points >=4 && player2Points >=0 && (player1Points - player2Points)>=2)
+        if (player1Points >=4 && (player1Points - player2Points)>=2)
         {
             return "Win for player1";
         }
 
-        if (player2Points >=4 && player1Points >=0 && (player2Points - player1Points)>=2)
+        if (player2Points >=4 && (player2Points - player1Points)>=2)
         {
             return "Win for player2";
         }
