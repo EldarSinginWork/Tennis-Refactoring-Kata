@@ -6,10 +6,6 @@ public class TennisGame2 implements TennisGame
     private final Player player1;
     private final Player player2;
 
-    private String P1res = "";
-    private String P2res = "";
-
-
     public TennisGame2(){
         this.player1 = new Player();
         this.player2 = new Player();
