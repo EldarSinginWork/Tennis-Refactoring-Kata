@@ -1,11 +1,13 @@
 
 public class TennisGame2 implements TennisGame
 {
-    public int P1point = 0;
-    public int P2point = 0;
+
+    private static final String PLAYER_1 = "player1";
+    private int P1point = 0;
+    private int P2point = 0;
     
-    public String P1res = "";
-    public String P2res = "";
+    private String P1res = "";
+    private String P2res = "";
 
     public String getScore(){
         String score = "";
@@ -94,9 +96,11 @@ public class TennisGame2 implements TennisGame
     }
 
     public void wonPoint(String player) {
-        if ("player1".equals(player))
+        if (PLAYER_1.equals(player)) {
             P1point++;
-        else
+        }
+        else {
             P2point++;
+        }
     }
 }
