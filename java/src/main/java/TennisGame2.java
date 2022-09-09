@@ -15,7 +15,7 @@ public class TennisGame2 implements TennisGame
         this.player2 = new Player();
     }
 
-    public String getScore(){
+    public String getScore() {
         int player1Points = player1.getPoints();
         int player2Points = player2.getPoints();
 
@@ -30,27 +30,26 @@ public class TennisGame2 implements TennisGame
 
         if (player1Points > 0 && player2Points==0)
         {
-            P1res = player1.getPointsAsScore();
-            
+            player1.updateScore();
             P2res = "Love";
         }
 
         if (player2Points > 0 && player1Points == 0)
         {
-            P2res = player2.getPointsAsScore();
+            player2.updateScore();
             P1res = "Love";
         }
         
         if (player1Points > player2Points && player1Points < 4)
         {
-            P1res = player1.getPointsAsScore();
-            P2res = player2.getPointsAsScore();
+            player1.updateScore();
+            player2.updateScore();
         }
 
         if (player2Points > player1Points && player2Points < 4)
         {
-            P1res = player1.getPointsAsScore();
-            P2res = player2.getPointsAsScore();
+            player1.updateScore();
+            player2.updateScore();
         }
 
         if (player1Points >=4 && player2Points >=0 && (player1Points - player2Points)>=2)
@@ -73,7 +72,7 @@ public class TennisGame2 implements TennisGame
             return "Advantage player2";
         }
 
-        return P1res + "-" + P2res;
+        return player1.getPointsAsScore() + "-" + player2.getPointsAsScore();
     }
 
     public void wonPoint(String player) {
