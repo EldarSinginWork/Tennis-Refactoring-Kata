@@ -23,64 +23,40 @@ public class TennisGame2 implements TennisGame
 
         if (player1.sameScoreAs(player2) && player1Points < 4)
         {
-            if (player1Points ==0)
-                score = "Love";
-            if (player1Points ==1)
-                score = "Fifteen";
-            if (player1Points ==2)
-                score = "Thirty";
+            score = player1.getPointsAsScore();
             score += "-All";
         }
-        if (player1.sameScoreAs(player2) && player1Points >= 3)
+
+        if (player1.sameScoreAs(player2) && player1Points >= 3) {
             score = "Deuce";
+        }
         
         if (player1Points > 0 && player2Points==0)
         {
-            if (player1Points ==1)
-                P1res = "Fifteen";
-            if (player1Points ==2)
-                P1res = "Thirty";
-            if (player1Points ==3)
-                P1res = "Forty";
+            P1res = player1.getPointsAsScore();
             
             P2res = "Love";
             score = P1res + "-" + P2res;
         }
+
         if (player2Points > 0 && player1Points == 0)
         {
-            if (player2Points==1)
-                P2res = "Fifteen";
-            if (player2Points==2)
-                P2res = "Thirty";
-            if (player1Points==3)
-                P2res = "Forty";
-            
+            P2res = player2.getPointsAsScore();
             P1res = "Love";
             score = P1res + "-" + P2res;
         }
         
         if (player1Points > player2Points && player1Points < 4)
         {
-            if (player1Points ==2)
-                P1res="Thirty";
-            if (player1Points ==3)
-                P1res="Forty";
-            if (player2Points ==1)
-                P2res="Fifteen";
-            if (player2Points ==2)
-                P2res="Thirty";
+            P1res = player1.getPointsAsScore();
+            P2res = player2.getPointsAsScore();
             score = P1res + "-" + P2res;
         }
+
         if (player2Points > player1Points && player2Points < 4)
         {
-            if (player2Points ==2)
-                P2res="Thirty";
-            if (player2Points ==3)
-                P2res="Forty";
-            if (player1Points ==1)
-                P1res="Fifteen";
-            if (player1Points ==2)
-                P1res="Thirty";
+            P1res = player1.getPointsAsScore();
+            P2res = player2.getPointsAsScore();
             score = P1res + "-" + P2res;
         }
         

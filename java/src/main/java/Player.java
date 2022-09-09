@@ -12,4 +12,21 @@ public class Player {
     public boolean sameScoreAs(Player other) {
         return this.points == other.points;
     }
+
+    public String getPointsAsScore() {
+        if (points == 0) {
+            return  "Love";
+        }
+        if (points == 1) {
+            return  "Fifteen";
+        }
+        if (points == 2) {
+            return  "Thirty";
+        }
+        if (points == 3) {
+            return  "Forty";
+        }
+
+        return "";
+    }
 }
